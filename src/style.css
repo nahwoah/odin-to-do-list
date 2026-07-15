@@ -1,3 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+html{
+    height: 100dvh;
+    box-sizing: border-box;
+}
+
 body{
     background-color: #282a3a;
+    /* background-color: aliceblue; */
+    font-family: Roboto, system-ui, -apple-system,  Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 2.5ch;
 }
+
+button{
+    font-family: Roboto, system-ui, -apple-system,  Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h1{
+    color: aquamarine;
+}
+
+dialog{
+    background-color: rgb(42, 176, 131);
+    box-shadow: 0px 0px 5px rgb(223, 223, 223);
+    border: 1px solid black;
+    border-radius: 2vh;
+}
+
+input, textarea{
+    border-radius: 5px;
+}
+
+input,textarea::selection{
+    border: 2px solid red;
+}
+
+input{
+    border: 1px solid grey;
+    height: 4vh;
+}
+
+textarea{
+    resize:vertical;
+}
+
+#add-title, #add-description, #add-notes, #add-read{
+    margin-bottom: 2vh;
+}
+
+#add-notes{
+    height: 4vh;
+}
+
+
