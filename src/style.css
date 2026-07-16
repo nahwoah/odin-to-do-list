@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 html{
     height: 100dvh;
@@ -8,8 +9,9 @@ html{
 body{
     background-color: #282a3a;
     /* background-color: aliceblue; */
-    font-family: Roboto, system-ui, -apple-system,  Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* font-family: Roboto, system-ui, -apple-system,  Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
     font-size: 2.5ch;
+    font-family: "Noto Sans", sans-serif;
 }
 
 button{
@@ -29,6 +31,8 @@ dialog{
 
 input, textarea{
     border-radius: 5px;
+    /* width: 35ch; */
+    font-size: 1.5ch;
 }
 
 input,textarea::selection{
@@ -37,7 +41,8 @@ input,textarea::selection{
 
 input{
     border: 1px solid grey;
-    height: 4vh;
+    /* height: 4vh; */
+    /* font-size: 1.3ch; */
 }
 
 textarea{

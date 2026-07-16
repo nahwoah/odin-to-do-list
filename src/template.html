@@ -15,7 +15,7 @@
                 <th>Title</th>
                 <th>Author</th>
                 <th>Pages</th>
-                <th>Read</th>
+                <th>Completed</th>
                 
             </tr>
         </thead>
@@ -26,13 +26,13 @@
 
     <dialog id="new-item">
         <label for="add-title">Title</label><br>
-        <input type="text" name="add-title" id="add-title" size="34"><br>
+        <input type="text" name="add-title" id="add-title"><br>
         <label for="add-description">Description</label><br>
-        <textarea name="add-description" id="add-description" rows="3" cols="33" maxlength="500"></textarea><br>
+        <textarea name="add-description" id="add-description" rows="3"  maxlength="500"></textarea><br>
         <label for="add-notes">Notes</label><br>
-        <textarea name="add-notes" id="add-notes" cols="33" maxlength="200"></textarea><br>
-        <input type="checkbox" id="add-read" name="add-read">
-        <label for="add-read"> Read</label><br>
+        <textarea name="add-notes" id="add-notes"  maxlength="200"></textarea><br>
+        <!-- <input type="checkbox" id="add-completed" name="add-completed">
+        <label for="add-completed"> Completed</label><br> -->
         <button id="submitBtn" value="default">Submit</button>
         <button commandfor="new-item" command="close">Close</button>
     </dialog>
