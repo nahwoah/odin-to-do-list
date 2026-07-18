@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-html{
+html {
     height: 100dvh;
     box-sizing: border-box;
 }
 
-body{
+body {
     background-color: #282a3a;
     /* background-color: aliceblue; */
     /* font-family: Roboto, system-ui, -apple-system,  Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
@@ -14,47 +14,57 @@ body{
     font-family: "Noto Sans", sans-serif;
 }
 
-button{
-    font-family: Roboto, system-ui, -apple-system,  Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+button {
+    font-family: Roboto, system-ui, -apple-system, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-h1{
+h1 {
     color: aquamarine;
 }
 
-dialog{
+dialog {
     background-color: rgb(42, 176, 131);
     box-shadow: 0px 0px 5px rgb(223, 223, 223);
     border: 1px solid black;
     border-radius: 2vh;
+
+    input,
+    textarea {
+        border-radius: 5px;
+        /* width: 35ch; */
+        font-size: 1.5ch;
+    }
+
+    #add-completed{
+        display: none;
+    }
+
+    input,
+    textarea:focus {
+        border: 1px solid red;
+        color: red
+    }
+
+    input {
+        border: 1px solid grey;
+        /* height: 4vh; */
+        /* font-size: 1.3ch; */
+    }
+
+    textarea {
+        resize: vertical;
+    }
+
 }
 
-input, textarea{
-    border-radius: 5px;
-    /* width: 35ch; */
-    font-size: 1.5ch;
-}
 
-input,textarea::selection{
-    border: 2px solid red;
-}
-
-input{
-    border: 1px solid grey;
-    /* height: 4vh; */
-    /* font-size: 1.3ch; */
-}
-
-textarea{
-    resize:vertical;
-}
-
-#add-title, #add-description, #add-notes, #add-read{
+#add-title,
+#add-description,
+#add-notes,
+#add-read {
     margin-bottom: 2vh;
 }
 
-#add-notes{
+#add-notes {
     height: 4vh;
 }
-
-
