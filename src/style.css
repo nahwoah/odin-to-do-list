@@ -7,7 +7,7 @@ html {
 }
 
 body {
-    background-color: #282a3a;
+    background-color: #161821;
     /* background-color: aliceblue; */
     /* font-family: Roboto, system-ui, -apple-system,  Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
     font-size: 2.5ch;
@@ -68,13 +68,44 @@ dialog {
 
 }
 
+#itemdiv {
+    display: grid;
+    grid-template-columns: auto 1fr 0.2fr 0.2fr;
+    color: aliceblue;
+    background-color: #282a3a;
+    border: 2px solid rgb(0, 178, 169);
+    border-radius: 6px;
+    height: 6vh;
+    padding-left: 10px;
+    margin-bottom: 1vh;
+    cursor: default;
+    align-items: center;
+    gap: 1rem;
+}
+
+#icon {
+
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: 2px solid aquamarine;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+
+    margin-right: 10px;
+}
+
+
 
 table {
     /* border-collapse: collapse; */
     border-spacing: 5px;
 }
 
-td{
+td {
     padding-right: 3vw;
     padding-bottom: 1vh;
 }
@@ -83,4 +114,3 @@ tbody td {
     border: 3px solid white;
     border-radius: 15px;
 }
-
