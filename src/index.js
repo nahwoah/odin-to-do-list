@@ -10,8 +10,8 @@ const add_notes = newitem.querySelector('#add-notes');
 const add_completed = newitem.querySelector('#add-completed');
 
 
-class List{
-    constructor(title, description, notes){
+class List {
+    constructor(title, description, notes) {
         this.id = crypto.randomUUID();
         this.title = title;
         this.description = description;
@@ -91,14 +91,17 @@ function addToTable() {
 
                 tableRow.appendChild(tdDel);
                 tdDel.appendChild(deleteBtn);
+            }else if(idx === 0 ){
+
+            
             } else if (idx <= List.length - 1) {
                 const tbData = document.createElement('td');
                 tbData.textContent = item[key];
                 tableRow.appendChild(tbData);
             }
-
         })
         tbody.appendChild(tableRow);
+
     })
 }
 

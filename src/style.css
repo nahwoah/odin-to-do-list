@@ -35,7 +35,7 @@ dialog {
         font-size: 1.5ch;
     }
 
-    #add-completed{
+    #add-completed {
         display: none;
     }
 
@@ -55,16 +55,32 @@ dialog {
         resize: vertical;
     }
 
+    #add-title,
+    #add-description,
+    #add-notes,
+    #add-read {
+        margin-bottom: 2vh;
+    }
+
+    #add-notes {
+        height: 5vh;
+    }
+
 }
 
 
-#add-title,
-#add-description,
-#add-notes,
-#add-read {
-    margin-bottom: 2vh;
+table {
+    /* border-collapse: collapse; */
+    border-spacing: 5px;
 }
 
-#add-notes {
-    height: 4vh;
+td{
+    padding-right: 3vw;
+    padding-bottom: 1vh;
 }
+
+tbody td {
+    border: 3px solid white;
+    border-radius: 15px;
+}
+
