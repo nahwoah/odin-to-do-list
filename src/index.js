@@ -1,5 +1,7 @@
 import "./style.css";
 
+const toDoList = []
+
 const table = document.querySelector("table");
 const tbody = document.querySelector("tbody");
 const newitem = document.getElementById('new-item');
@@ -9,6 +11,7 @@ const add_description = newitem.querySelector('#add-description');
 const add_notes = newitem.querySelector('#add-notes');
 const add_completed = newitem.querySelector('#add-completed');
 const container = document.querySelector("#container");
+const sidepanel = document.querySelector("#sidepanel");
 
 
 class List {
@@ -21,7 +24,6 @@ class List {
     }
 }
 
-const toDoList = []
 
 function addToDoItem() {
     const item = new List(add_title.value, add_description.value, add_notes.value)
@@ -97,9 +99,9 @@ function addToTable() {
 
                 tableRow.appendChild(tdDel);
                 tdDel.appendChild(deleteBtn);
-            }else if(idx === 0 ){
+            } else if (idx === 0) {
 
-            
+
             } else if (idx <= List.length - 1) {
                 const tbData = document.createElement('td');
                 tbData.textContent = item[key];
@@ -111,15 +113,23 @@ function addToTable() {
     })
 }
 
-function drawItem(){
+const titleSidepanel = document.createElement("textarea")
+    const descSidepanel = document.createElement("textarea")
+    const notesSidepanel = document.createElement("textarea")
+
+function drawItem() {
 
     const item = new List(add_title.value, add_description.value, add_notes.value)
-
     toDoList.push(item);
+
+
 
     // addToDoItem()
     const itemdiv = document.createElement("div");
     itemdiv.id = "itemdiv"
+
+    const itemsidepanel = document.createElement("div");
+    itemsidepanel.id = "itemsidepanel"
 
     const icon = document.createElement("button")
     icon.id = 'icon'
@@ -127,22 +137,59 @@ function drawItem(){
     const desc = document.createElement("span");
     const notes = document.createElement("span")
 
-    // icon.textContent = '◯'
+    
 
     icon.addEventListener('mouseover', e => {
-        icon.textContent = '✓' //  fallback   ✓ ✔️
-        icon.style.color = 'aquamarine'
+        if (!item.completed) {
+            icon.textContent = '✓' //  fallback   ✓ ✔️
+            icon.style.color = 'aquamarine'
+        }
     })
-    icon.addEventListener('mouseleave', e =>{
-        icon.textContent = ''
+    icon.addEventListener('mouseleave', e => {
+        if (!item.completed) {
+            icon.textContent = ''
+        }
+
+    })
+    icon.addEventListener("click", function () {
+        item.changeCompleted();
+        if (item.completed) {
+            icon.style.color = "aquamarine"
+            icon.style.background = "purple"
+            icon.style.border = 'purple'
+            icon.textContent = '✓'
+            title.style.textDecoration = "line-through";
+            title.style.color = "grey"
+        } else {
+            icon.style.color = "aquamarine"
+            icon.style.background = "transparent"
+            icon.style.border = '2px solid aquamarine'
+            icon.textContent = ''
+            title.style.textDecoration = "none";
+            title.style.color = "white";
+
+        }
     })
 
-    title.textContent = `${item.title} `;
-    desc.textContent = `${item.description} `;
-    notes.textContent = `${item.notes} `;
+
+
+    title.textContent = item.title;
+    desc.textContent = item.description;
+    notes.textContent = item.notes;
 
     itemdiv.append(icon, title, desc, notes);
     container.appendChild(itemdiv);
+
+
+
+
+    itemdiv.addEventListener("click", function () {
+        titleSidepanel.placeholder = item.title;
+        descSidepanel.placeholder = item.description;
+        notesSidepanel.placeholder = item.notes;
+
+        sidepanel.append(titleSidepanel, descSidepanel, notesSidepanel)
+    })
 }
 
 submit.addEventListener("click", function (e) {
