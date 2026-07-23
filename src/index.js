@@ -12,6 +12,7 @@ const add_notes = newitem.querySelector('#add-notes');
 const add_completed = newitem.querySelector('#add-completed');
 const container = document.querySelector("#container");
 const sidepanel = document.querySelector("#sidepanel");
+const mainContainer = document.querySelector("#main-container");
 
 
 class List {
@@ -114,8 +115,9 @@ function addToTable() {
 }
 
 const titleSidepanel = document.createElement("textarea")
-    const descSidepanel = document.createElement("textarea")
-    const notesSidepanel = document.createElement("textarea")
+const descSidepanel = document.createElement("textarea")
+const notesSidepanel = document.createElement("textarea")
+
 
 function drawItem() {
 
@@ -137,7 +139,7 @@ function drawItem() {
     const desc = document.createElement("span");
     const notes = document.createElement("span")
 
-    
+
 
     icon.addEventListener('mouseover', e => {
         if (!item.completed) {
@@ -167,7 +169,6 @@ function drawItem() {
             icon.textContent = ''
             title.style.textDecoration = "none";
             title.style.color = "white";
-
         }
     })
 
@@ -179,16 +180,19 @@ function drawItem() {
 
     itemdiv.append(icon, title, desc, notes);
     container.appendChild(itemdiv);
-
+    
 
 
 
     itemdiv.addEventListener("click", function () {
-        titleSidepanel.placeholder = item.title;
-        descSidepanel.placeholder = item.description;
-        notesSidepanel.placeholder = item.notes;
+        titleSidepanel.textContent = item.title;
+        descSidepanel.textContent = item.description;
+        notesSidepanel.textContent = item.notes;
 
         sidepanel.append(titleSidepanel, descSidepanel, notesSidepanel)
+        // sidepanel.style.gridTemplateColumns = "3fr 1fr";
+        // sidepanel.style.gridTemplateRows =  "auto minmax(0, 1fr) auto";
+        // sidepanel.style.gap = "10px"
     })
 }
 
