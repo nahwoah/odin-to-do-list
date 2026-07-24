@@ -8,6 +8,7 @@ const newitem = document.getElementById('new-item');
 const submit = newitem.querySelector('#submitBtn');
 const add_title = newitem.querySelector('#add-title');
 const add_description = newitem.querySelector('#add-description');
+const add_duedate = newitem.querySelector("#add-due-date")
 const add_notes = newitem.querySelector('#add-notes');
 const add_completed = newitem.querySelector('#add-completed');
 const container = document.querySelector("#container");
@@ -16,10 +17,11 @@ const mainContainer = document.querySelector("#main-container");
 
 
 class List {
-    constructor(title, description, notes) {
+    constructor(title, description, notes, duedate) {
         this.id = crypto.randomUUID();
         this.title = title;
         this.description = description;
+        this.duedate = duedate;
         this.notes = notes;
         this.completed = false;
     }
@@ -27,7 +29,7 @@ class List {
 
 
 function addToDoItem() {
-    const item = new List(add_title.value, add_description.value, add_notes.value)
+    const item = new List(add_title.value, add_description.value, add_duedate.value, add_notes.value)
 
     toDoList.push(item);
 
@@ -119,6 +121,8 @@ const descSidepanel = document.createElement("textarea")
 const notesSidepanel = document.createElement("textarea")
 
 
+
+
 function drawItem() {
 
     const item = new List(add_title.value, add_description.value, add_notes.value)
@@ -207,6 +211,7 @@ submit.addEventListener("click", function (e) {
     newitem.close();
     add_title.value = '';
     add_description.value = '';
+    add_duedate.value = '';
     add_notes.value = '';
     add_completed.checked = false;
 
